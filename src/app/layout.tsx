@@ -29,9 +29,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="navbar">
-           <Link href={'/'}>Bosh sahifa</Link>
-           <Link href={'/about'}>Men haqimda </Link>
-           <Link href={'/contact'}>Bog'lanish</Link>
+          <div>
+            <Link href={"/"}>Bosh sahifa</Link>
+          </div>
+          <div>
+            <Link href={"/about"}>Men haqimda </Link>
+          </div>
+          <div>
+            <Link href={"/contact"}>Bog'lanish</Link>
+          </div>
         </div>
         {children}
       </body>
