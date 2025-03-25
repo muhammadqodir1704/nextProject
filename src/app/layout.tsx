@@ -1,7 +1,9 @@
+"use client";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,15 +25,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+    const router = useRouter();
+
+
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="navbar-1">
-          <button>Bosh Sahifa</button>
-          <button>Men Haqimda</button>
-          <button>Bog'lanish</button>
+          <button onClick={() => router.push("/")}>Bosh Sahifa</button>
+          <button onClick={() =>router.push("/about")}>Men Haqimda</button>
+          <button onClick={() => router.push("/contact")}>Bog'lanish</button>
         </div>
         {/* <div className="navbar">
           <div>
