@@ -25,7 +25,7 @@ export default function AboutLayout({
       <section>
         <p>Start About</p>
         {children}
-        <p>End About</p>
+        <p>End About.</p>
       </section>
   );
 }
