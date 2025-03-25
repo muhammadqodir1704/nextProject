@@ -28,7 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="navbar">
+        <div className="navbar-1">
+          <button>Bosh Sahifa</button>
+          <button>Men Haqimda</button>
+          <button>Bog'lanish</button>
+        </div>
+        {/* <div className="navbar">
           <div>
             <Link href={"/"}>Bosh sahifa</Link>
           </div>
@@ -38,7 +43,7 @@ export default function RootLayout({
           <div>
             <Link href={"/contact"}>Bog'lanish</Link>
           </div>
-        </div>
+        </div> */}
         {children}
       </body>
     </html>
