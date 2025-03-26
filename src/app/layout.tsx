@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import Navbar from "@/component/navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -36,22 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="navbar-1">
-          <button onClick={() => router.push("/")}>Bosh Sahifa</button>
-          <button onClick={() =>router.push("/about")}>Men Haqimda</button>
-          <button onClick={() => router.push("/contact")}>Bog'lanish</button>
-        </div>
-        {/* <div className="navbar">
-          <div>
-            <Link href={"/"}>Bosh sahifa</Link>
-          </div>
-          <div>
-            <Link href={"/about"}>Men haqimda </Link>
-          </div>
-          <div>
-            <Link href={"/contact"}>Bog'lanish</Link>
-          </div>
-        </div> */}
+      <Navbar/>
         {children}
       </body>
     </html>
