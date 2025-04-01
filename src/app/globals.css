@@ -7,6 +7,14 @@
   }
   .navbar-1{
      display: flex;
-     gap: 2gi0px;
-     
+     gap: 10px;
+  }
+  body{
+    background-color: #000;
+  }
+  .contact{
+   color: #fff;
+  }
+  .about{
+   color: #fff;
   }
