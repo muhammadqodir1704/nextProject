@@ -14,6 +14,7 @@ const HomePage = () => {
           console.log(err);
         }
       }
+      getData();
     },[])
   return <Home />;
 };
