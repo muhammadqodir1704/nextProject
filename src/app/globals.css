@@ -9,14 +9,13 @@
      display: flex;
      gap: 10px;
   }
-  body{
+  /* body{
     background-color: #000;
-  }
+  } */
   .contact{
    color: #fff;
   }
   .about{
    color: #fff;
-     gap: 2gi0px;
-     
+   gap: 2px;
   }
