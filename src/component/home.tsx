@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 const Home = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
