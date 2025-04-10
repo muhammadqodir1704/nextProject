@@ -1,9 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
-import Home from '@/component/home';
+
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const HomePage = () => {
+const Home = () => {
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
       const getData = async () => {
         try{
@@ -12,6 +14,8 @@ const HomePage = () => {
         }
         catch(err){
           console.log(err);
+        }finally{
+            setLoading(false);
         }
       }
       getData();
@@ -19,4 +23,4 @@ const HomePage = () => {
   return <Home />;
 };
 
-export default HomePage;
+export default Home;
