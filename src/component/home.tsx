@@ -1,15 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { PostType } from "@/interface";
 
 const Home = () => {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<PostType[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
       const getData = async () => {
         try {
-           const {data} = await axios.get("https://jsonplaceholder.typicode.com/posts");
+           const {data} = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=8");
            setPosts(data);
         } catch(err) {
           console.log(err);
