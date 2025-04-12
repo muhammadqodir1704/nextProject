@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PostType } from "@/interface";
+import Link from "next/link";
 
 const Home = () => {
     const [posts, setPosts] = useState<PostType[]>([]);
@@ -21,20 +22,16 @@ const Home = () => {
       getData();
     }, []);
 
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
     return (
-      <div>
-        <h1>Posts</h1>
-        {posts.map((post: any) => (
-          <div key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
+     <>
+     {
+        loading ? "Loading..." : posts.map(c => (
+          <div key={c.id}>
+            <Link href={`/posts/${c.id}`}>{c.title}</Link>
           </div>
-        ))}
-      </div>
+        ))
+     }
+     </>
     );
 };
 
