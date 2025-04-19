@@ -1,14 +1,19 @@
 import { PostType } from "@/interface";
 import axios from "axios";
 import Link from "next/link";
+import { resolve } from "path";
 
 async function getData() {
   const { data } = await axios.get(
     "https://jsonplaceholder.typicode.com/posts?_limit=8"
   );
+
+  await new Promise((resolve) => setTimeout(() => {
+    resolve(" ");
+  }, 2000));
   return data;
 }
-
+ 
 const PostsPage = async () => {
   const data: PostType[] = await getData();
 
@@ -22,11 +27,11 @@ const PostsPage = async () => {
           </tr>
         </thead>
         <tbody>
-          {data.map(c => (
-            <tr key={c.id}> 
+          {data.map((c) => (
+            <tr key={c.id}>
               <td>{c.id}</td>
               <td>
-                <Link href={`/posts/${c.id}`}>{c.title}</Link> 
+                <Link href={`/posts/${c.id}`}>{c.title}</Link>
               </td>
             </tr>
           ))}
