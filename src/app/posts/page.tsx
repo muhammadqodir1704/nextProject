@@ -2,10 +2,11 @@ import { PostType } from "@/interface";
 import axios from "axios";
 import Link from "next/link";
 import { resolve } from "path";
+import {notFound} from "next/navigation";
 
 async function getData() {
   const { data } = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts?_limit=8"
+    "https://jsonplaceholder.typicode.com/posts2_limit=8"
   );
 
   await new Promise((resolve) => setTimeout(() => {
@@ -16,6 +17,10 @@ async function getData() {
  
 const PostsPage = async () => {
   const data: PostType[] = await getData();
+
+  if (!data.length) {
+    notFound();
+  }
 
   return (
     <>
