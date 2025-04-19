@@ -6,12 +6,8 @@ import {notFound} from "next/navigation";
 
 async function getData() {
   const { data } = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts2_limit=8"
-  );
-
-  await new Promise((resolve) => setTimeout(() => {
-    resolve(" ");
-  }, 2000));
+    "https://jsonplaceholder.typicode.com/posts?_limit=10"
+  );   
   return data;
 }
  
