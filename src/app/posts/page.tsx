@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { resolve } from "path";
 import {notFound} from "next/navigation";
+import Posts from "@/component/posts";
 
 async function getData() {
   const { data } = await axios.get(
@@ -20,24 +21,7 @@ const PostsPage = async () => {
 
   return (
     <>
-      <table border={1}>
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>title</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((c) => (
-            <tr key={c.id}>
-              <td>{c.id}</td>
-              <td>
-                <Link href={`/posts/${c.id}`}>{c.title}</Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+       <Posts data={data} />
     </>
   );
 };
