@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PostType } from "@/interface";
 import Link from "next/link";
+import Text from './text/text';
 
 const Home = () => {
     const [posts, setPosts] = useState<PostType[]>([]);
@@ -29,10 +30,9 @@ const Home = () => {
           <div key={c.id}>
             <Link href={`/posts/${c.id}`}>{c.title}</Link>
           </div>
-        ))
-     }
-      <div>Home Page</div>
-     </>
+        ))}
+       <Text text="Home Page"/>
+    </>
     );
 };
 
