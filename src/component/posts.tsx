@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { PostType } from '@/interface'
 import Link from 'next/link'
-
+ 
 const Posts: FC<{ data:PostType[]}> = ({data}) => {
   return (
     <table border={1}>
