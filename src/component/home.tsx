@@ -31,6 +31,7 @@ const Home = () => {
           </div>
         ))
      }
+      <div>Home Page</div>
      </>
     );
 };
