@@ -7,7 +7,7 @@ const Posts: FC<{ data:PostType[]}> = ({data}) => {
     <table border={1}>
     <thead>
       <tr>
-        <th>id</th>
+        <th className='text'>id</th>
         <th>title</th>
       </tr>
     </thead>

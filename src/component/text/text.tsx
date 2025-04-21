@@ -1,9 +1,9 @@
 import { FC } from "react";
-import './text.css'
+import styles from "./text.module.css";
 import { TextProps } from "./text.props";
 
 const Text: FC<TextProps> = ({ text }) => {
-  return <p className="text">{text}</p>;
+  return <p className={styles.text}>{text}</p>;
 };
 
 export default Text;
